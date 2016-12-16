@@ -1,4 +1,5 @@
 <h1>Creatures#show</h1>
 
 Name: <%= @creature.name %><br>
-Description: <%= @creature.description %>
+Description: <%= @creature.description %><br>
+<%= link_to "Delete Creature", @creature, :method => :delete %>
