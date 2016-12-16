@@ -9,8 +9,12 @@ class CreaturesController < ApplicationController
   end
 
   def create
-    if Creature.create(creature_params)
-      redirect_to creature_path(Creature.last)
+    @creature = Creature.new(creature_params)
+    if @creature.save
+      redirect_to creature_path(@creature)
+    else
+      flash[:notice] = 'Please fill in all fields below'
+      redirect_to new_creature_path
     end
   end
 
@@ -24,8 +28,12 @@ class CreaturesController < ApplicationController
 
   def update
     updated_creature = Creature.find(creature_id)
-    updated_creature.update(creature_params)
-    redirect_to creature_path(updated_creature)
+    if updated_creature.update(creature_params)
+      redirect_to creature_path(updated_creature)
+    else
+      flash[:notice] = 'Please fill in all fields below'
+      redirect_to edit_creature_path(updated_creature)
+    end
   end
 
   def destroy
