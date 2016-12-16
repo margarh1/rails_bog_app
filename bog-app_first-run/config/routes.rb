@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'creatures/index'
+
+  get 'creatures/new'
+
+  get 'creatures/create'
+
+  get 'creatures/show'
+
+  get 'creatures/edit'
+
+  get 'creatures/update'
+
+  get 'creatures/destroy'
+
+  root 'creatures#index'
 
   get '/creatures' => 'creatures#index', as: 'creatures'
   get '/creatures/new' => 'creatures#new', as: 'new_creature'
