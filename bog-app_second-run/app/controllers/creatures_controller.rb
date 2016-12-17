@@ -13,6 +13,7 @@ class CreaturesController < ApplicationController
     if @creature.save
       redirect_to creature_path(@creature)
     else
+      flash[:notice] = 'Please fill in all the fields below'
       redirect_to new_creature_path
     end
   end
@@ -30,8 +31,14 @@ class CreaturesController < ApplicationController
     if updated_creature.update(creature_params)
       redirect_to creature_path(updated_creature)
     else
+      flash[:notice] = 'Please fill in all the fields below'
       redirect_to edit_creature_path
     end
+  end
+
+  def destroy
+    Creature.destroy(creature_id)
+    redirect_to creatures_path
   end
 
   private

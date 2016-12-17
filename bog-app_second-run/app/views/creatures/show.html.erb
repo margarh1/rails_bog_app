@@ -2,3 +2,6 @@
 
 <strong>Name:</strong> <%= @creature.name %><br>
 <strong>Description:</strong> <%= @creature.description %><br>
+<%= link_to 'Edit this Creature', edit_creature_path(@creature) %> | 
+<%= link_to 'Delete this Creature', @creature, :method => :delete %> | 
+<%= link_to 'Back', creatures_path %>
