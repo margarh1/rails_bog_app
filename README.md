@@ -30,8 +30,14 @@ You'll work through this project as a "time trial." You will be building the app
 When you're finished with your timed runs, edit the README on your master branch with an introduction paragraph that includes:
 
  - a 3-5 sentences reflection on how this went for you  
+   * This was actually really simple for me, though it was also pretty fun. It was very repetitive too, I have to admit, but it made me think of ways to try to cut my time even more. I would've liked to have had a slightly more difficult app to build these four times, but this one was fine.
  - a tip for others to help conquer some part of the app that used to trip you up  
+   * Considering I had very little difficulty creating this app all four times, I can't say I have much in the way of tips. I did, however, start by writing up the routes first before writing up all the controller function during my last run.
  - the times for your first and fourth runs     
+   * 1 - 40:17
+   * 2 - 26:51
+   * 3 - 21:09
+   * 4 - 20:54
 
 Add a link to your bog app repo on the "My Work" section of your personal website.
 
