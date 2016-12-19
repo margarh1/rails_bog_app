@@ -8,6 +8,13 @@ class CreaturesController < ApplicationController
   end
 
   def create
+    @creature = Creature.new(creature_params)
+    if @creature.save
+      redirect_to creature_path(@creature)
+    else
+      flash[:notice] = 'Please fill out all fields below'
+      redirect_to new_creature_path
+    end
   end
 
   def show

@@ -1,2 +1,13 @@
 <h1>Creatures#new</h1>
-<p>Find me in app/views/creatures/new.html.erb</p>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<%= form_for @creature do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <%= f.label :description %>
+  <%= f.text_area :description %><br>
+  <%= f.submit 'Save Creature' %>
+<% end %>
