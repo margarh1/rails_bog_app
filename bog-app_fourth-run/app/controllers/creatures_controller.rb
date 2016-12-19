@@ -23,9 +23,17 @@ class CreaturesController < ApplicationController
 
   def edit
     @creature = Creature.find(creature_id)
+    render :new
   end
 
   def update
+    updated_creature = Creature.find(creature_id)
+    if updated_creature.update(creature_params)
+      redirect_to creature_path(updated_creature)
+    else
+      flash[:notice] = 'Please fill out all fields below'
+      redirect_to edit_creature_path
+    end
   end
 
   def destroy
